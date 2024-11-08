@@ -274,9 +274,7 @@ class CustomExtractor(ExcavateRule):
                 description_string = (
                     f" with description: [{yara_rule_settings.description}]" if yara_rule_settings.description else ""
                 )
-
                 url_string = event.data.get("url") or event.data.get("host", "Unknown Source")
-
                 event_data["description"] = (
                     f"Custom Yara Rule [{self.name}]{description_string} Matched via identifier [{identifier}] on [{url_string}]"
                 )
