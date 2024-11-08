@@ -277,7 +277,7 @@ class CustomExtractor(ExcavateRule):
                 # Get URL from event if available
                 url = event.data.get("url", "") if hasattr(event, "data") else ""
                 url_string = f" on @{url}" if url else ""
-                
+
                 event_data["description"] = (
                     f"Custom Yara Rule [{self.name}]{description_string} Matched via identifier [{identifier}]{url_string}"
                 )
