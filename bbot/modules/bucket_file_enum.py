@@ -1,5 +1,5 @@
 from bbot.modules.base import BaseModule
-import xml.etree.ElementTree as ET
+import defusedxml.ElementTree as ET
 
 
 class bucket_file_enum(BaseModule):

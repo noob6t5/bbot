@@ -894,7 +894,7 @@ def extract_params_xml(xml_data, compare_mode="getparam"):
         >>> extract_params_xml('<root><child1><child2>value</child2></child1></root>')
         {('root', None), ('child1', None), ('child2', 'value')}
     """
-    import xml.etree.ElementTree as ET
+    import defusedxml.ElementTree as ET
 
     try:
         root = ET.fromstring(xml_data)
