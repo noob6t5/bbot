@@ -22,10 +22,12 @@ def cache_get(self, key, text=True, cache_hrs=24 * 7):
             else:
                 open_kwargs["mode"] = "rb"
             log.debug(f'Using cached content for "{key}"')
-            return open(filename, **open_kwargs).read()
+            # Using a  block to ensure the file is closed automatically
+            with open(filename, **open_kwargs) as f:
+                return f.read()
         else:
             log.debug(f'Cached content for "{key}" is older than {cache_hrs:,} hours')
-
+    return None
 
 def cache_put(self, key, content):
     """
