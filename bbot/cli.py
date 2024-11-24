@@ -57,6 +57,15 @@ async def _main():
             return
         # ensure arguments (-c config options etc.) are valid
         options = preset.args.parsed
+        # ensure  if verbose (-v) is used with -t else throw help
+        if options.verbose and not options.targets:
+            print("Error: Missing target. Use bbot -t [TARGET] -v [OTHER OPTIONS]")
+            sys.exit(1)
+
+        # ensure if debug (-d) flag is used without -t flag
+        if options.debug and not options.targets:
+            print("Error: Missing target. Use bbot -t [TARGET] -d [OTHER OPTIONS] .")
+            sys.exit(1)
 
         # print help if no arguments
         if len(sys.argv) == 1:
