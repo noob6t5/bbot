@@ -64,7 +64,7 @@ async def _main():
 
         # ensure if debug (-d) flag is used without -t flag
         if options.debug and not options.targets:
-            print("Error: Missing target. Use bbot -t [TARGET] -d [OTHER OPTIONS] .")
+            print("Error: Missing target. Use bbot -t [TARGET] -d [OTHER OPTIONS]")
             sys.exit(1)
 
         # print help if no arguments

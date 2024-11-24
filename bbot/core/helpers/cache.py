@@ -29,6 +29,7 @@ def cache_get(self, key, text=True, cache_hrs=24 * 7):
             log.debug(f'Cached content for "{key}" is older than {cache_hrs:,} hours')
     return None
 
+
 def cache_put(self, key, content):
     """
     Put an item in the cache.
